@@ -1,0 +1,15 @@
+.nav {
+  padding: 8px;
+  background: indigo;
+  margin-bottom: 10px;;
+}
+.navlist {
+  color: white;
+  font-size: large;
+  padding-right: 10px;
+
+}
+.navlist :hover {
+  color: blue;
+  font-size: larger;
+}

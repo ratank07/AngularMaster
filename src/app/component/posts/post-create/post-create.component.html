@@ -1,0 +1,15 @@
+<mat-card>
+  <form action="" #postForm="ngForm">
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name="title"
+      ngModel
+      required
+      placeholder="Post Title"
+      #title="ngModel">
+    </mat-form-field>
+  </form>
+  <button mat-button color='primary'>Submit Post</button>
+</mat-card>
+<router-outlet></router-outlet>

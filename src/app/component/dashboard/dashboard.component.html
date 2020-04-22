@@ -1,0 +1,19 @@
+<div class="container">
+  <form class="form" #postForm="ngForm">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="postvar">Enter Your post</label>
+        <input type="text" name="postvar" class="form-control" ngModel [(ngModel)]="postvar">
+      </div>
+    <button class="btn btn-primary" (click)="sendPost(postForm)">Send post</button>
+    </div>
+  </form>
+</div>
+
+<div class="container m-2">
+ <app-post-list></app-post-list>
+</div>
+
+<div class="container">
+  <app-testmod></app-testmod>
+</div>
