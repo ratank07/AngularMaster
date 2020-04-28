@@ -8,6 +8,7 @@ import { MaterialModule } from "./shared/material/material.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { FormsModule } from "@angular/forms";
+import { alertComponent } from "./shared/alert/alert-component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { FormsModule } from "@angular/forms";
     FormsModule
   ],
   exports:[],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [alertComponent]
+
 })
 export class AppModule { }

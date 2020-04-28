@@ -8,10 +8,14 @@ import { FormsModule, NgForm } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { TestmoduleModule } from "./testmodule/testmodule.module";
+import { FlexComponent } from './flex/flex.component';
+import { FlexnavComponent } from './flex/flexnav/flexnav.component';
+import { ObservableComponent } from './observable/observable.component';
+import { GridboxComponent } from './flex/gridbox/gridbox.component';
 
 @NgModule({
   declarations: [DashboardComponent,
-    PostCreateComponent, PostListComponent],
+    PostCreateComponent, PostListComponent, FlexComponent, FlexnavComponent, ObservableComponent, GridboxComponent],
   imports: [
     CommonModule,
     ComponentRoutingModule,

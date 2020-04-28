@@ -1,3 +1,9 @@
+
+<div class="container">
+  <div class="h2tag">Routes</div>
+  <button class="btn btn-primary mr-2"(click)="Observableparams()" > Route from Ts file</button>
+  <a [routerLink]="['/observable']" class="btn btn-primary" [queryParams]="{id:44,name:'ratan'}">Route from template</a>
+</div>
 <div class="container">
   <form class="form" #postForm="ngForm">
     <div class="col-md-6">
@@ -9,9 +15,13 @@
     </div>
   </form>
 </div>
+<div style="margin:20px">
+<button class="btn btn-primary" (click)="increment()">Increment</button>
+<button class="btn btn-primary" (click)="decrement()">Decrement</button>
 
+</div>
 <div class="container m-2">
- <app-post-list></app-post-list>
+ <app-post-list [numberToInput]="numberToInput"></app-post-list>
 </div>
 
 <div class="container">
