@@ -12,10 +12,11 @@ import { FlexComponent } from './flex/flex.component';
 import { FlexnavComponent } from './flex/flexnav/flexnav.component';
 import { ObservableComponent } from './observable/observable.component';
 import { GridboxComponent } from './flex/gridbox/gridbox.component';
-
+import { DemoPipe } from "../shared/pipe/demo.pipe";
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [DashboardComponent,
-    PostCreateComponent, PostListComponent, FlexComponent, FlexnavComponent, ObservableComponent, GridboxComponent],
+    PostCreateComponent, PostListComponent, FlexComponent, FlexnavComponent, ObservableComponent, GridboxComponent, AdminComponent],
   imports: [
     CommonModule,
     ComponentRoutingModule,

@@ -2,7 +2,6 @@ import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular
 import { alertComponent } from "../alert/alert-component";
 import { PlaceholderDirective } from "../placeholder/placeholder.directive";
 import { Subscription} from "rxjs";
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

@@ -8,13 +8,12 @@ import { MaterialModule } from "./material/material.module";
 import { alertComponent } from "./alert/alert-component";
 import { PlaceholderDirective } from "./placeholder/placeholder.directive";
 
-
 @NgModule({
   declarations: [FooterComponent, PageNotFoundComponent, alertComponent,PlaceholderDirective],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports:[FooterComponent, MaterialModule, alertComponent]
 })

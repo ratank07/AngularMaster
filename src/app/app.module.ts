@@ -9,11 +9,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { FormsModule } from "@angular/forms";
 import { alertComponent } from "./shared/alert/alert-component";
-
+import { DemoPipe } from "./shared/pipe/demo.pipe";
+import { cardHowerDIrective } from "./shared/directive/cardHower.directive";
+import { highLightDirective } from "./shared/directive/highlightattri.directive";
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    DemoPipe,
+    cardHowerDIrective,
+    highLightDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +29,7 @@ import { alertComponent } from "./shared/alert/alert-component";
     SharedModule,
     FormsModule
   ],
-  exports:[],
+  exports:[DemoPipe],
   bootstrap: [AppComponent],
   entryComponents: [alertComponent]
 
