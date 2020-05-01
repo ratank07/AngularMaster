@@ -5,3 +5,61 @@
   <button (click)="login()">Normal User Log in </button> |
   <button (click)="loginAdmin()">Admin User Log in </button>
 </p>
+<div class="home-btn d-none d-sm-block">
+  <a href="index.html" class="text-white"><i class="fas fa-home h2"></i></a>
+</div>
+<div class="accountbg"></div>
+<div class="wrapper-page account-page-full">
+  <div class="card">
+      <div class="card-body">
+          <!-- <div class="text-center">
+              <a href="login" class="logo"><img src="assets/images/logo-dark.png" height="60" alt="logo"></a>
+          </div> -->
+          <div class="p-3">
+              <h4 class="font-18 m-b-5 text-center">Welcome Back !</h4>
+              <p class="text-muted text-center">Sign in to continue to ERP.</p>
+              <form class="form-horizontal m-t-30">
+                  <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" id="username" name="username" formControlName="username"
+                          placeholder="Enter username" required
+                          [ngClass]="{ 'is-invalid' : true }">
+                      <!-- <div *ngIf="(submitted && f.username.errors)" class="invalid-feedback">
+                          <div [hidden]="!(f.username.errors.required)">*Username required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group">
+                      <label for="userpassword">Password</label>
+                      <input type="password" class="form-control" id="userpassword" name="userpassword"
+                          formControlName="userpassword" placeholder="Enter password" required
+                          [ngClass]="{ 'is-invalid' : true }">
+                      <!-- <div *ngIf="(submitted && f.userpassword.errors)" class="invalid-feedback">
+                          <div [hidden]="!(f.userpassword.errors.required)">*Password required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group row m-t-20">
+                      <div class="col-md-6">
+                          <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="customControlInline">
+                              <label class="custom-control-label" for="customControlInline">Remember me</label>
+                          </div>
+                      </div>
+                      <div class="col-md-2 text-right">
+                          <button class="btn btn-primary w-md waves-effect waves-light" (click)="login()" type="button">Log In User</button>
+                      </div>
+                      <div class="col-md-2 text-right">
+                        <button class="btn btn-primary w-md waves-effect waves-light" (click)="loginAdmin()" type="button">Log In Admin</button>
+                    </div>
+                  </div>
+                  <div class="form-group m-t-10 mb-0 row">
+                      <div class="col-12 m-t-20">
+                          <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <notifier-container></notifier-container> -->

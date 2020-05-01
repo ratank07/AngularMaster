@@ -8,13 +8,18 @@ import { FlexComponent } from "./flex/flex.component";
 import { ObservableComponent } from "./observable/observable.component";
 import { FlexnavComponent } from "./flex/flexnav/flexnav.component";
 import { GridboxComponent } from "./flex/gridbox/gridbox.component";
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from "./admin/admin.component";
 import { AuthGuard } from "../shared/login/auth-guards.service";
 import { LoginComponent } from "../shared/login/login/login.component";
-import { RoleGaurd } from '../shared/login/role-gaurd.service';
+import { RoleGaurd } from "../shared/login/role-gaurd.service";
 import { LoginModule } from "../shared/login/login.module";
+import { FormsComponent } from './flex/forms/forms.component';
 const routes: Routes = [
-  { path: "dashboard", component: DashboardComponent, canActivate:[AuthGuard] },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
   { path: "dashboard/:dashparam", component: DashboardComponent },
   {
     path: "postcreate",
@@ -23,23 +28,29 @@ const routes: Routes = [
   },
   {
     path: "flex",
-    component: FlexComponent, canActivate:[AuthGuard],
+    component: FlexComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: "flex", component: FlexnavComponent, canActivate:[RoleGaurd] },
+      { path: "flex", component: FlexnavComponent, canActivate: [RoleGaurd] },
       { path: "grid", component: GridboxComponent },
+      { path: "forms", component: FormsComponent}
+
     ],
   },
-  { path:'admin', component: AdminComponent, data:{role:'admin'},
-     canActivate:[RoleGaurd]
+  {
+    path: "admin",
+    component: AdminComponent,
+    data: { role: "admin" },
+    canActivate: [RoleGaurd],
   },
-  { path: 'login', loadChildren: ()=>LoginModule},
+  { path: "login", loadChildren: () => LoginModule },
   {
     path: "testmodule",
     //  loadChildren:"./testmodule/testmodule.module#TestmoduleModule",
     loadChildren: () => TestmoduleModule,
   },
   { path: "observable", component: ObservableComponent },
-  { path: "observable/:id", component: PostCreateComponent },
+  { path: "observable/:id", component: PostCreateComponent }
 ];
 
 @NgModule({

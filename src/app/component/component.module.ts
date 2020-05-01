@@ -14,15 +14,18 @@ import { ObservableComponent } from './observable/observable.component';
 import { GridboxComponent } from './flex/gridbox/gridbox.component';
 import { DemoPipe } from "../shared/pipe/demo.pipe";
 import { AdminComponent } from './admin/admin.component';
+import { FormsComponent } from './flex/forms/forms.component';
+import { ReactiveFormsModule } from "@angular/forms";
 @NgModule({
   declarations: [DashboardComponent,
-    PostCreateComponent, PostListComponent, FlexComponent, FlexnavComponent, ObservableComponent, GridboxComponent, AdminComponent],
+    PostCreateComponent, PostListComponent, FlexComponent, FlexnavComponent, ObservableComponent, GridboxComponent, AdminComponent, FormsComponent],
   imports: [
     CommonModule,
     ComponentRoutingModule,
     FormsModule,
     SharedModule,
-    TestmoduleModule
+    TestmoduleModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentModule { }

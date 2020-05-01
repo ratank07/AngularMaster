@@ -1,0 +1,93 @@
+<div class="row mt-4">
+  <div class="col-xs-5 mx-5">
+    <h3>Templates forms</h3>
+    <form #tempForm="ngForm" class="form">
+      <div class="form-group">
+        <label for="fname">First name</label>
+        <input type="text" ngModel #fname="ngModel" name="fname" required class="form-control"
+          [ngClass]="{ 'is-invalid' : fname.invalid && fname.dirty && tempForm.invalid }"></div>
+      <div class="radio">
+        <label class="radio-inline radiolabel" style="" for="radio">
+          <input type="radio" name="clap" ngModel value="2" id=""> 2 claps
+        </label>
+        <label class="radio radiolabel mx-3" for="radio"><input type="radio" ngModel value="3" name="clap" id=""> 3
+          Claps</label>
+      </div>
+      <!-- <div class="radio">
+        <label class="radio-inline radiolabel" *ngFor="let myOption of fields" for="radio">
+          <input type="radio" ngModel name="fieldss" ngModel [value]="myOption" id=""> {{myOption}}
+        </label>
+      </div> -->
+      <div>
+
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" ngModel name="email" [(ngModel)]="userForm.email" class="form-control"></div>
+      <div class="form-group">
+        <label for="field">Fields</label>
+        <select ngModel class="form-control" required [ngClass]="{ 'is-invalid' : field.invalid && field.dirty }"
+          name="field" #field="ngModel">
+          <option *ngFor="let myOption of fields;" [value]="myOption">{{myOption}}</option>
+        </select>
+        <!-- <input type="text" ngModel name="field"  ngModel class="form-control"></div> -->
+      </div>
+      <div class="form-group">
+        <label for="profile">Profile</label>
+        <select ngModel name="profile" class="form-control" ngModel>
+          <option value="Manager">Manager</option>
+          <option value="Software Developer">Software Developer</option>
+          <option value="Managing HR">Managing HR</option>
+        </select>
+      </div>
+      <div>
+        <input type="checkbox" ngModel name="like"> Like the Form?
+      </div>
+      <button class="btn btn-primary mt-2" [ngClass]="{'disabled': tempForm.invalid}"
+        (click)="SubmituserForm(tempForm)">Submit</button>
+    </form>
+  </div>
+  <div class="col-sm-5 mx-5">
+    <h3>Reactive forms</h3>
+    <form [formGroup]="contactForm" onsubmit="modelForm" class="form">
+      <div formGroupName="personalData" class="form-group">
+
+        <input class="form-control" formControlName="email">
+        <input class="form-control" formControlName="mobile">
+        <select class="form-control" formControlName="country">
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+      </div>
+      <select class="form-control" formControlName="requestType" id="">
+        <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
+      </select>
+      <input class="form-control" formControlName="text">
+      <button type="button" class="btn btn-primary" (click)="modelForm()"
+        [disabled]="contactForm.pristine">Save</button>
+      <button type="reset" class="btn btn-primary" [disabled]="contactForm.pristine">Revert</button>
+
+    </form>
+  </div>
+
+  <div class="col-sm-12 mx-5">
+    <h3>Reactive form builder forms</h3>
+    <form [formGroup]="contactForm" onsubmit="modelForm" class="form">
+      <div formGroupName="personalData" class="form-group">
+
+        <input class="form-control" formControlName="email">
+        <input class="form-control" formControlName="mobile">
+        <select class="form-control" formControlName="country">
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+      </div>
+      <select class="form-control" formControlName="requestType" id="">
+        <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
+      </select>
+      <input class="form-control" formControlName="text">
+      <button type="button" class="btn btn-primary" (click)="modelForm()"
+        [disabled]="contactForm.pristine">Save</button>
+      <button type="reset" class="btn btn-primary" [disabled]="contactForm.pristine">Revert</button>
+
+    </form>
+  </div>
+</div>
